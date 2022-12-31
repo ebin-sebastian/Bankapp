@@ -1,0 +1,31 @@
+4-11-22
+
+
+event data are stored in  event.target.value
+
+
+data sharing
+  __________
+
+  html and ts share the data
+
+
+  html        ts
+  view       component
+
+
+  data binding is used to share data
+  ------------------
+
+  1. one way binding
+
+     1.1   component to view sharing
+        1.1.1  string interpollation {{}}
+        1.1.2 property binding   [property]="value"
+
+
+     1.2   view to componet sharing
+        1.2.1  event binding    (event name)="methodname()"
+        1.2.2  $ event binding    (event name)="methodname($event)"    used when gatherig data from event
+        1.2.3  evnet binding using template referance variable     #variable_name
+        
