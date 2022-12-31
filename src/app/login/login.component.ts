@@ -22,10 +22,30 @@ export class LoginComponent {
   }
 
 
-  login(){
+  // login(){
     
-    var acno=this.acno
-    var pass=this.pass
+  //   var acno=this.acno
+  //   var pass=this.pass
+  //   var userDetails=this.userDetails
+  //   //the above statement help us to not call each variable by "this" fuction everytime
+
+  //   if(acno in userDetails){
+  //     if(pass==userDetails[acno]['password']){
+  //         alert("Login Success")
+  //     }
+  //     else{
+  //       alert("Incorrect Password")
+  //     }
+  //   }
+  //   else{
+  //     alert("user not exist")
+  //   }
+  // }
+
+  login(a:any,b:any){
+    
+    var acno=a.value
+    var pass=b.value
     var userDetails=this.userDetails
     //the above statement help us to not call each variable by "this" fuction everytime
 
@@ -41,6 +61,7 @@ export class LoginComponent {
       alert("user not exist")
     }
   }
+
   acnoChange(event:any){
     this.acno=event.target.value
     // console.log(event.target.value)
