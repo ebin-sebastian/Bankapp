@@ -1,7 +1,7 @@
 
 <body>
     <div class="container w-25 bg-secondary rounded mt-5 p-3 opacity-75">
-        <h1 class="text-center">Login Page</h1>
+        <h1 class="text-center">Login</h1>
         <div class="mt-2 p-2">
             <input [(ngModel)]="acno" name="acno" type="text" [placeholder]="phacno" class="form-control" id="acnum">
         </div>
@@ -9,7 +9,7 @@
             <input [(ngModel)]="pass" name="pass" type="password" [placeholder]="phpass" class="form-control" id="pass">
         </div>
         <div class="text-center mt-2 p-2">
-            <button type="button" (click)="login()" class="btn btn-success">Login</button><br><br>
+            <button type="submit" (click)="login()" class="btn btn-success">Login</button><br><br>
             <div class="text-center">New User?  <a routerLink="register">Register Here</a></div>
         </div>
 
