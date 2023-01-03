@@ -32,3 +32,27 @@ data sharing
    2. two way binding
 
       2.1  ngModel     FormsModule(a Module in ngModel)          [(ngModel)]="value"          import{FormsModule} from '@angular/forms';
+
+
+
+
+
+
+
+   routing  in angular
+   -------
+
+   navigateByUrl        is a method of class Router 
+
+
+   dependancy injection
+   -----------                                                                             acc. spec. variable :  Classname
+         used to share datas between two classes...                               constructor(private router:Router)
+         it is used inside constructer and should specify an access specifier
+
+      router outlet
+      -------------
+
+      routerLink ----used insted of href
+      navigateByUrl---used on methods
+
