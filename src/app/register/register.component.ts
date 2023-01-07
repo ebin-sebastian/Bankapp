@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,7 @@ export class RegisterComponent {
   acno:any
   pass:any
 
-  constructor(private ds:DataService ) { }
+  constructor(private ds:DataService,private router:Router ) { }
 
 
 
@@ -24,6 +25,7 @@ export class RegisterComponent {
     const result=this.ds.register(acno,uname,pass)
     if(result){
       alert("Registration Success")
+      this.router.navigateByUrl("")
     }
     else{
       alert("Registration Failed")

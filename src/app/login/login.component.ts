@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -15,14 +16,8 @@ export class LoginComponent {
   phpass="Password"
 
 
-  userDetails:any={
-    1000:{acno:1000,username:"leo",password:"messi",balance:0},
-    1001:{acno:1001,username:"neymar",password:"neymar",balance:0},
-    1002:{acno:1002,username:"andres",password:"iniesta",balance:0},
-    1003:{acno:1003,username:"luis",password:"suarez",balance:0}
-  }
 
-  constructor(private router:Router){
+  constructor(private router:Router,private ds:DataService){
 
   }
 
@@ -31,23 +26,11 @@ export class LoginComponent {
     
     var acno=this.acno
     var pass=this.pass
-    var userDetails=this.userDetails
-    //the above statement help us to not call each variable by "this" fuction everytime
-
-    if(acno in userDetails){
-      if(pass==userDetails[acno]['password']){
-          alert("Login Success")
-          //redirection
-          this.router.navigateByUrl('dashboard')
-      }
-      else{
-        alert("Incorrect Password")
-      }
-    }
-    else{
-      alert("user not exist")
+    
+    const result=this.ds.login(acno,pass)
+    if(result){
+      
+      this.router.navigateByUrl("dashboard")
     }
   }
-
-    
 }

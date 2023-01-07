@@ -1,1 +1,41 @@
-<p>dashboard works!</p>
+<div><h1 class="text-center text-danger">CAMP-NOU BANK</h1>
+    <h2 class="p-3 text-secondary">Welcome {{user}}</h2>
+<form (ngSubmit)="deposit()">
+    <div class="container w-25 bg-secondary rounded mt-5 p-3 opacity-75">
+        <h1 class="text-center">Deposit</h1>
+        <div class="mt-2 p-2">
+            <input [(ngModel)]="acno" name="acno" type="text" placeholder="Account Number" class="form-control" id="acnum">
+        </div>
+        <div class="mt-2 p-2">
+            <input [(ngModel)]="pass" name="pass" type="password" placeholder="Password" class="form-control" id="pass">
+        </div>
+        <div class="mt-2 p-2">
+            <input [(ngModel)]="d_amount" name="pass" type="text" placeholder="Amount" class="form-control" id="pass">
+        </div>
+        <div class="text-center mt-2 p-2">
+            <button type="submit"  class="btn btn-success">Deposit</button><br><br>
+        </div>
+
+    </div>
+    
+</form>
+<form (ngSubmit)="withdraw()">
+    <div class="container w-25 bg-secondary rounded mt-5 p-3 opacity-75">
+        <h1 class="text-center">Withdraw</h1>
+        <div class="mt-2 p-2">
+            <input [(ngModel)]="acno1" name="acno" type="text" placeholder="Account Number" class="form-control" id="acnum">
+        </div>
+        <div class="mt-2 p-2">
+            <input [(ngModel)]="pass1" name="pass" type="password" placeholder="Password" class="form-control" id="pass">
+        </div>
+        <div class="mt-2 p-2">
+            <input [(ngModel)]="w_amount" name="pass" type="text" placeholder="Amount" class="form-control" id="pass">
+        </div>
+        <div class="text-center mt-2 p-2">
+            <button type="submit"  class="btn btn-success">Withdraw</button><br><br>
+        </div>
+
+    </div>
+    
+</form>
+</div>

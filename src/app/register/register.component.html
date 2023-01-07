@@ -1,4 +1,4 @@
-<body>
+<form (ngSubmit)="register()">
     <div class="container w-25 bg-secondary rounded mt-5 p-3 opacity-75">
         <h1 class="text-center">Register</h1>
         <div class="mt-2 p-2">
@@ -11,10 +11,10 @@
             <input [(ngModel)]="pass" name="pass" type="password" placeholder="Password" class="form-control" id="pass">
         </div>
         <div class="text-center mt-2 p-2">
-            <button type="submit" (click)="register()" class="btn btn-success">Register</button><br><br>
+            <button type="submit"  class="btn btn-success">Register</button><br><br>
             <div class="text-center">Already  User?  <a routerLink="">Login Here</a></div>
         </div>
 
     </div>
     
-</body>
+</form>
