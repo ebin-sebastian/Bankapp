@@ -7,14 +7,15 @@ import { Router } from '@angular/router';
 export class DataService {
 
   currentUser:any
+  currentacno:any
 
   //redundant datas
 
   userDetails:any={
-    1000:{acno:1000,username:"leo",password:"messi",balance:0},
-    1001:{acno:1001,username:"neymar",password:"neymar",balance:0},
-    1002:{acno:1002,username:"andres",password:"iniesta",balance:0},
-    1003:{acno:1003,username:"luis",password:"suarez",balance:0}
+    1000:{acno:1000,username:"leo",password:"messi",balance:0,transaction:[]},
+    1001:{acno:1001,username:"neymar",password:"neymar",balance:0,transaction:[]},
+    1002:{acno:1002,username:"andres",password:"iniesta",balance:0,transaction:[]},
+    1003:{acno:1003,username:"luis",password:"suarez",balance:0,transaction:[]}
   }
 
   constructor() { }
@@ -25,7 +26,7 @@ export class DataService {
         return false
       }
       else{
-        userDetails[acno]={acno,username,password,balance:0}
+        userDetails[acno]={acno,username,password,balance:0,transaction:[]}
         console.log(userDetails)
         return true
       }
@@ -40,6 +41,7 @@ export class DataService {
 
     if(acno in userDetails){
       if(pass==userDetails[acno]['password']){
+        this.currentacno=acno
           return true
       }
       else{
@@ -59,6 +61,10 @@ export class DataService {
     if(acno in userDetails){
       if(pass==userDetails[acno]["password"]){
         userDetails[acno]['balance']+=amount
+
+        //add transaction details in transaction array
+        userDetails[acno]['transaction'].push({type:'Credit',amount})
+
         return userDetails[acno]['balance']
         alert("deposited")
       }
@@ -81,6 +87,10 @@ export class DataService {
       if(pass1==userDetails[acno1]['password']){
         if(amount<=userDetails[acno1]['balance']){
           userDetails[acno1]['balance']-=amount
+
+          //add transaction details
+          userDetails[acno1]['transaction'].push({type:'Debit',amount})
+
           return userDetails[acno1]['balance']
         }
         else{
@@ -99,6 +109,9 @@ export class DataService {
     }
   }
 
+  getTransaction(acno:any){
+    return this.userDetails[acno]['transaction']
+  }
 
 }
 

@@ -72,3 +72,12 @@ to store reduntant datas...datas we use frequently                     -- ng g s
                                              
  
 
+
+
+
+
+Angular Directives
+-----------------
+
+- Structural directives  --- can apply datas directly from array
+                        --ngFor
