@@ -81,3 +81,18 @@ Angular Directives
 
 - Structural directives  --- can apply datas directly from array
                         --ngFor
+
+
+
+
+
+
+Form validation in angular
+----------------------
+
+1. template driven form    ---   first  html form then apply validation
+2. model driven form    ----   a model create for form in ts then apply validation methods
+                              -- ReactiveFormsModule  --- module used for model form creation
+                              --FormBuilder  -- class in form for model form creation
+                              --group array control
+                              
