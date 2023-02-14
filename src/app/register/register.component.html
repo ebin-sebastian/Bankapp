@@ -4,12 +4,15 @@
         <div class="mt-2 p-2">
             <input  formControlName="uname" name="uname" type="text" placeholder="Username" class="form-control" id="uname">
         </div>
+        <div class="text-danger" *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched"> Invalid username</div>
         <div class="mt-2 p-2">
             <input formControlName="acno" name="acno" type="text" placeholder="Account Number" class="form-control" id="acnum">
         </div>
+        <div class="text-danger" *ngIf="this.registerForm.get('acno')?.errors && this.registerForm.get('acno')?.touched"> Invalid Account Number</div>
         <div class="mt-2 p-2">
             <input formControlName="pass" name="pass" type="password" placeholder="Password" class="form-control" id="pass">
         </div>
+        <div class="text-danger" *ngIf="this.registerForm.get('pass')?.errors && this.registerForm.get('pass')?.touched"> Invalid Password</div>
         <div class="text-center mt-2 p-2">
             <button type="submit"  class="btn btn-success">Register</button><br><br>
             <div class="text-center">Already  User?  <a routerLink="">Login Here</a></div>

@@ -19,12 +19,12 @@ data sharing
 
   1. one way binding
 
-     1.1   component to view sharing
+     1.1   component to view sharing   (ts to html)
         1.1.1  string interpollation {{}}
-        1.1.2 property binding   [property]="value"
+        1.1.2 property binding   [attribute name]="value"
 
 
-     1.2   view to componet sharing
+     1.2   view to componet sharing  (html to ts)
         1.2.1  event binding    (event name)="methodname()"
         1.2.2  $ event binding    (event name)="methodname($event)"    used when gatherig data from event
         1.2.3  evnet binding using template referance variable     #variable_name
@@ -79,8 +79,9 @@ to store reduntant datas...datas we use frequently                     -- ng g s
 Angular Directives
 -----------------
 
-- Structural directives  --- can apply datas directly from array
-                        --ngFor
+- Structural directives  --- can apply datas directly from array or object in html
+                        --  *ngFor
+                        --  *ngif
 
 
 
@@ -95,4 +96,20 @@ Form validation in angular
                               -- ReactiveFormsModule  --- module used for model form creation
                               --FormBuilder  -- class in form for model form creation
                               --group array control
-                              
+                           
+
+
+---------------------
+can access the output of input atribute
+
+- this.registerForm.get('uname')?.errors
+
+match with role--empty
+not match --content
+
+
+Local storage in Angular
+----------------------
+-setItem
+-getItem
+-removeItem

@@ -18,7 +18,36 @@ export class DataService {
     1003:{acno:1003,username:"luis",password:"suarez",balance:0,transaction:[]}
   }
 
-  constructor() { }
+  constructor() { 
+    this.getData()
+  }
+
+  saveData(){
+    if(this.userDetails){
+      localStorage.setItem('database',JSON.stringify(this.userDetails))
+    }
+    if(this.currentUser){
+      localStorage.setItem('currentUser',JSON.stringify(this.currentUser))
+    }
+    if(this.currentacno){
+      localStorage.setItem('currentAcno',JSON.stringify(this.currentacno))
+    }
+
+  }
+
+  getData(){
+    if(localStorage.getItem('database')){
+      this.userDetails=JSON.parse(localStorage.getItem('database') || '')
+    }
+    if(localStorage.getItem('currentUser')){
+      this.currentUser=JSON.parse(localStorage.getItem('currentUser') || '')
+    }
+    if(localStorage.getItem('currentAcno')){
+      this.currentacno=JSON.parse(localStorage.getItem('currentAcno') || '')
+    }
+  }
+
+
 
   register(acno:any,username:any,password:any){
       var userDetails=this.userDetails
@@ -27,9 +56,12 @@ export class DataService {
       }
       else{
         userDetails[acno]={acno,username,password,balance:0,transaction:[]}
-        console.log(userDetails)
+        this.saveData()
+        //console.log(userDetails)
         return true
+
       }
+      
   }
 
 
@@ -42,6 +74,7 @@ export class DataService {
     if(acno in userDetails){
       if(pass==userDetails[acno]['password']){
         this.currentacno=acno
+        this.saveData()
           return true
       }
       else{
@@ -64,7 +97,7 @@ export class DataService {
 
         //add transaction details in transaction array
         userDetails[acno]['transaction'].push({type:'Credit',amount})
-
+        this.saveData()
         return userDetails[acno]['balance']
         alert("deposited")
       }
@@ -90,7 +123,7 @@ export class DataService {
 
           //add transaction details
           userDetails[acno1]['transaction'].push({type:'Debit',amount})
-
+          this.saveData()
           return userDetails[acno1]['balance']
         }
         else{

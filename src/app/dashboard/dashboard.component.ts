@@ -47,5 +47,9 @@ withdraw(){
   }
   //alert("withdraw worked")
 }
-
+logout(){
+  localStorage.removeItem('currentAcno')
+  localStorage.removeItem('currentUser')
+  this.router.navigateByUrl('')
+}
 }

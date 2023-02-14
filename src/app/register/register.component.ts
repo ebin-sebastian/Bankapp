@@ -17,26 +17,26 @@ export class RegisterComponent {
 
   //create register form model
 
-  registerForm=this.formbuilder.group({uname:['',[Validators.required,Validators.pattern('[a-zA-Z]+')]],acno:['',[Validators.required,Validators.pattern('[0-9]+')]],pass:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]+')]]})
+  registerForm=this.formbuilder.group({
+    uname:['',[Validators.required,Validators.pattern('[a-zA-Z]+')]],
+    acno:['',[Validators.required,Validators.pattern('[0-9]+')]],
+    pass:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]+')]]})
 
   register(){
 
       var uname=this.registerForm.value.uname
       var acno= this.registerForm.value.acno
       var pass= this.registerForm.value.pass
-    
-    
-
-    if(this.registerForm.valid){
       const result=this.ds.register(acno,uname,pass)
     
 
+    if(this.registerForm.valid){
           if(result){
             alert("Registration Success")
             this.router.navigateByUrl("")
                     }
           else{
-              alert("Registration Failed")
+              alert("User already exists")
               }
 
                               }
