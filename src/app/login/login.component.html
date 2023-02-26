@@ -1,6 +1,6 @@
 
 <form [formGroup]="loginForm" (ngSubmit)="login()">
-    <div class="container w-25 bg-secondary rounded mt-5 p-3 opacity-75">
+    <div class="container  w-25 bg-secondary rounded mt-5 p-3 opacity-75 ">
         <h1 class="text-center">Login</h1>
         <div class="mt-2 p-2">
             <input formControlName="acno" name="acno" type="text" [placeholder]="phacno" class="form-control" id="acnum">
@@ -12,7 +12,7 @@
         <div class="text-danger" *ngIf="this.loginForm.get('pass')?.errors && this.loginForm.get('pass')?.touched"> Invalid Password</div>
         <div class="text-center mt-2 p-2">
             <button type="submit"  class="btn btn-success">Login</button><br><br>
-            <div class="text-center">New User?  <a routerLink="register">Register Here</a></div>
+            <div class="text-center">New User?  <a class="text-white text-decoration-none" routerLink="register">Register Here</a></div>
         </div>
 
     </div>

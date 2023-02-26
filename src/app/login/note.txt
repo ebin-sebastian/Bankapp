@@ -113,3 +113,25 @@ Local storage in Angular
 -setItem
 -getItem
 -removeItem
+
+
+
+
+ngclass  --for assigning class in html
+
+
+
+EventEmitter  ---to create user defined events
+
+
+
+input and output decorator
+-------------------------
+
+input decoarator ---parent to child                               eg:     @Input()item:string | undefined
+output declarator --- child to parent                             eg:     @Output() onCancel=new EventEmitter()
+
+
+
+angular pipe
+------------

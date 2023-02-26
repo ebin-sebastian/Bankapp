@@ -1,4 +1,7 @@
 body{
-    background-image: url("./assets/bankhome.jpg");
+    background-color:#544892;
     background-size: cover;
+}
+.style1{
+    opacity: 0;
 }
